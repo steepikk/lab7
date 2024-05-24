@@ -1,0 +1,50 @@
+ERROR | 22-05-2024 22:19:33 | db.ConnectionManager - Connection failed
+org.postgresql.util.PSQLException: Ошибка при попытке подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:358) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
+	at java.sql.DriverManager.getConnection(DriverManager.java:683) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at managers.db.ConnectionManager.getConnection(ConnectionManager.java:30) [classes/:?]
+	at managers.db.DatabaseManager.createDatabaseIfNotExists(DatabaseManager.java:27) [classes/:?]
+	at main.App.main(App.java:31) [classes/:?]
+Caused by: java.net.UnknownHostException: db
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:565) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.net.Socket.connect(Socket.java:666) ~[?:?]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
+	... 9 more
+ERROR | 22-05-2024 22:19:33 | db.DatabaseManager - Failed to establish connection to the database.
+ERROR | 22-05-2024 22:19:33 | db.ConnectionManager - Connection failed
+org.postgresql.util.PSQLException: Ошибка при попытке подсоединения.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:358) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
+	at java.sql.DriverManager.getConnection(DriverManager.java:683) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at managers.db.ConnectionManager.getConnection(ConnectionManager.java:30) [classes/:?]
+	at main.App.main(App.java:33) [classes/:?]
+Caused by: java.net.UnknownHostException: db
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:565) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.net.Socket.connect(Socket.java:666) ~[?:?]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:136) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
+	... 8 more
+ERROR | 22-05-2024 22:19:33 | managers.CollectionManager - Error loading collection from database
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at managers.db.PersistenceManager.loadDragons(PersistenceManager.java:181) ~[classes/:?]
+	at managers.CollectionManager.loadCollection(CollectionManager.java:277) [classes/:?]
+	at managers.CollectionManager.<init>(CollectionManager.java:34) [classes/:?]
+	at main.App.main(App.java:37) [classes/:?]
+INFO  | 22-05-2024 22:19:33 | managers.CollectionManager - ! Uploaded dragons are valid.
+INFO  | 22-05-2024 22:19:33 | network.UDPServer - Сервер запущен по адресу WIN-5BIE8RNIL80/192.168.31.92:1821

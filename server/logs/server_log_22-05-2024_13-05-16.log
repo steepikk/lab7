@@ -1,0 +1,4 @@
+INFO  | 22-05-2024 13:05:17 | db.DatabaseManager - Database already exists.
+INFO  | 22-05-2024 13:05:17 | db.DatabaseManager - Tables created successfully (if not existed).
+INFO  | 22-05-2024 13:05:17 | managers.CollectionManager - ! Uploaded dragons are valid.
+INFO  | 22-05-2024 13:05:17 | network.UDPServer - Сервер запущен по адресу WIN-5BIE8RNIL80/192.168.31.92:1821

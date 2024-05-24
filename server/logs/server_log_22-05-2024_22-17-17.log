@@ -1,0 +1,36 @@
+ERROR | 22-05-2024 22:17:18 | db.ConnectionManager - Connection failed
+org.postgresql.util.PSQLException: �����: ������������ "s413044" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:698) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:207) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
+	at java.sql.DriverManager.getConnection(DriverManager.java:683) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at managers.db.ConnectionManager.getConnection(ConnectionManager.java:30) [classes/:?]
+	at managers.db.DatabaseManager.createDatabaseIfNotExists(DatabaseManager.java:27) [classes/:?]
+	at main.App.main(App.java:31) [classes/:?]
+ERROR | 22-05-2024 22:17:18 | db.DatabaseManager - Failed to establish connection to the database.
+ERROR | 22-05-2024 22:17:18 | db.ConnectionManager - Connection failed
+org.postgresql.util.PSQLException: �����: ������������ "s413044" �� ������ �������� ����������� (�� ������)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:698) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:207) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:262) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.makeConnection(Driver.java:446) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.3.jar:42.7.3]
+	at java.sql.DriverManager.getConnection(DriverManager.java:683) ~[java.sql:?]
+	at java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at managers.db.ConnectionManager.getConnection(ConnectionManager.java:30) [classes/:?]
+	at main.App.main(App.java:33) [classes/:?]
+ERROR | 22-05-2024 22:17:18 | managers.CollectionManager - Error loading collection from database
+java.lang.NullPointerException: Cannot invoke "java.sql.Connection.prepareStatement(String)" because "this.connection" is null
+	at managers.db.PersistenceManager.loadDragons(PersistenceManager.java:181) ~[classes/:?]
+	at managers.CollectionManager.loadCollection(CollectionManager.java:277) [classes/:?]
+	at managers.CollectionManager.<init>(CollectionManager.java:34) [classes/:?]
+	at main.App.main(App.java:37) [classes/:?]
+INFO  | 22-05-2024 22:17:18 | managers.CollectionManager - ! Uploaded dragons are valid.
+INFO  | 22-05-2024 22:17:18 | network.UDPServer - Сервер запущен по адресу WIN-5BIE8RNIL80/192.168.31.92:1821
